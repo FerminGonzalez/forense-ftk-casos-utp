@@ -1,0 +1,21 @@
+{
+  "caso": "FICTICIO-VEH-03",
+  "vehiculo": "Riviera X4 2022",
+  "eventos": [
+    {
+      "fecha_hora": "2026-05-08 20:55",
+      "ubicacion": "Residencia de Daniela",
+      "fuente": "dispositivo simulado"
+    },
+    {
+      "fecha_hora": "2026-05-09 02:35",
+      "ubicacion": "Bodega Norte ficticia",
+      "fuente": "lector de acceso simulado"
+    },
+    {
+      "fecha_hora": "2026-05-10 07:40",
+      "ubicacion": "Lote Mercado Motor ficticio",
+      "fuente": "cámara simulada"
+    }
+  ]
+}

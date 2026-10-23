@@ -1,0 +1,6 @@
+De: investigaciones@seguro-ejemplo.invalid
+Para: daniela.torres@example.invalid
+Fecha: 09/05/2026 08:40
+Asunto: Confirmación de reporte ficticio FIC-2026-0508
+
+Confirmamos que el vehículo Riviera X4, placa FICT-2026, VIN SIMULADO-VIN-0001, fue reportado como sustraído el 08/05/2026 a las 21:10. El expediente permanece abierto. Mensaje completamente ficticio.

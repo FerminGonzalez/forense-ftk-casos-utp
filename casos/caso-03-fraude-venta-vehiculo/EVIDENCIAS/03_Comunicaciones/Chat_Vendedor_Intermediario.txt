@@ -1,0 +1,6 @@
+[10/05/2026 07:52] Marco: Publica la foto donde se vea la placa original.
+[10/05/2026 07:54] Intermediario: ¿Dejo el VIN terminado en 0001?
+[10/05/2026 07:55] Marco: Sí, en el anuncio. En el contrato cambia los dos últimos a 91.
+[11/05/2026 19:18] Intermediario: El comprador quiere revisar el registro.
+[11/05/2026 19:20] Marco: Muéstrale la copia, pero no le des tiempo para consultar. La venta debe cerrar mañana.
+Conversación ficticia para práctica.

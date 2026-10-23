@@ -1,0 +1,3 @@
+CASO 01 - VENTA FRAUDULENTA DE PROPIEDADES
+
+Analice los contratos, registro, avalúo, pagos, comunicaciones, imágenes y borradores. Determine si la finca fue ofrecida o vendida a más de una persona, si el vendedor estaba autorizado y qué contradicciones existen en la superficie, los pagos y las fechas. Construya una cronología, cite al menos seis archivos y entregue una conclusión sustentada. Todo el contenido es ficticio.

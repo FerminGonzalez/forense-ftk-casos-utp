@@ -1,0 +1,60 @@
+name: Integridad de la evidencia
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: SHA-256 y cronología
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verificar manifiestos SHA-256
+        run: python3 tools/verificar_integridad.py
+
+      - name: Comprobar resumen legible
+        run: python3 tools/verificar_integridad.py --quiet
+
+      - name: Validar salida JSON de la cronología
+        run: |
+          python3 tools/linea_tiempo.py --formato json > /tmp/cronologia.json
+          python3 - <<'PY'
+          import json, pathlib
+          datos = json.loads(pathlib.Path("/tmp/cronologia.json").read_text(encoding="utf-8"))
+          casos = datos["casos"]
+          assert len(casos) == 2, f"se esperaban 2 casos, hay {len(casos)}"
+          for caso in casos:
+              assert caso["total"] == len(caso["eventos"])
+              assert caso["total"] > 0, f"{caso['caso']} no produjo eventos"
+              fechas = [evento["fecha_iso"] for evento in caso["eventos"]]
+              assert fechas == sorted(fechas), f"{caso['caso']} no está ordenado cronológicamente"
+              print(f"{caso['caso']}: {caso['total']} eventos en orden")
+          PY
+
+      - name: Validar salida CSV de la cronología
+        run: |
+          python3 tools/linea_tiempo.py --formato csv > /tmp/cronologia.csv
+          python3 - <<'PY'
+          import csv, pathlib
+          with pathlib.Path("/tmp/cronologia.csv").open(encoding="utf-8") as fh:
+              filas = list(csv.DictReader(fh))
+          assert filas, "el CSV no tiene filas"
+          assert set(filas[0]) == {"caso", "fecha_hora", "fecha_iso", "tipo", "descripcion", "fuente_archivo"}
+          print(f"CSV válido con {len(filas)} eventos")
+          PY

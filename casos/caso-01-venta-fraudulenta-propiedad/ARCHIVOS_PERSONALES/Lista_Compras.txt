@@ -1,0 +1,5 @@
+Arroz
+Café
+Detergente
+Frutas
+Archivo ficticio sin relación con los casos.

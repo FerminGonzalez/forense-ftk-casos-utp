@@ -1,0 +1,3 @@
+CASO 03 - FRAUDE EN LA VENTA DE UN VEHÍCULO
+
+Andrés Molina entregó un anticipo por un vehículo Riviera X4 2022 anunciado por Marco Castillo. Después de firmar, una inspección detectó diferencias en la identificación del vehículo. Determine si existen indicios de fraude, cuál VIN está mejor sustentado, quién figura como propietario, qué ocurrió con el dinero y cómo se relacionan las imágenes, comunicaciones y registros. Entregue inventario, cronología, capturas, tabla comparativa y conclusión. Cite al menos ocho archivos.
